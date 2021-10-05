@@ -11,13 +11,13 @@ BOT_NAME = 'name_crawler'
 
 SPIDER_MODULES = ['name_crawler.spiders']
 NEWSPIDER_MODULE = 'name_crawler.spiders'
-USER_AGENT='my-cool-project (http://example.com)'
+USER_AGENT="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'name_crawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+# ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -86,3 +86,5 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# HTTPERROR_ALLOWED_CODES  =[404]
+# handle_httpstatus_list = [404]
