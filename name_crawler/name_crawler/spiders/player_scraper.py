@@ -11,23 +11,25 @@ class name_crawler(scrapy.Spider):
         self.start_urls = [
             "http://www.worldfootball.net/players_list/eng-premier-league-2000-2001/nach-name/1",
             "http://www.worldfootball.net/players_list/eng-premier-league-2000-2001/nach-name/2"
+
         ]
         self.handle_httpstatus_list = [404]
 
     def parse(self, response):
         logging.info("response.status:%s" % response.status)
-        for post in response.css("div[class='white'] table[class='standard_tabelle']"):
-            print(post)
-            name = post.css("td[nowrap] ::text").get()
-            team = post.css("td ::text")[3].get()
-            birth = post.css("td ::text")[4].get()
-            height = post.css("td ::text")[5].get()
-            pos = post.css("td ::text")[6].get()
+        for idx, post in enumerate(response.css("div[class='white'] table[class='standard_tabelle'] tr")):
+            if idx != 0:
+                print(post)
+                name = post.css("td ::text").getall()[0].strip()
+                team = post.css("td ::text").getall()[3]
+                birth = post.css("td ::text").getall()[4]
+                height = post.css("td ::text").getall()[5]
+                pos = post.css("td ::text").getall()[6]
 
-            yield {
-                'name' : name,
-                'team' : team,
-                'DateOfBirth' : birth,
-                'height' : height,
-                'Position' : pos
-            }
+                yield {
+                    'name' : name,
+                    'team' : team,
+                    'DateOfBirth' : birth,
+                    'height' : height,
+                    'Position' : pos
+                }
