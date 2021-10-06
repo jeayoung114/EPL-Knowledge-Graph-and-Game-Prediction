@@ -8,16 +8,17 @@ class name_crawler(scrapy.Spider):
     def __init__(self, date='', **kwargs):
         super().__init__(**kwargs)
         self.allowed_domain = ['http://www.worldfootball.net']
+        seasons = [str(i) + "-" + str(i+1) for i in range(2000, 2021)]
         self.start_urls = [
-            "http://www.worldfootball.net/players_list/eng-premier-league-2000-2001/nach-name/1",
-            "http://www.worldfootball.net/players_list/eng-premier-league-2000-2001/nach-name/2"
-
+            "http://www.worldfootball.net/players_list/eng-premier-league-" + i + "/nach-name/" + str(j) for i in seasons for j in range(0,20)
         ]
+
         self.handle_httpstatus_list = [404]
 
     def parse(self, response):
         logging.info("response.status:%s" % response.status)
         for idx, post in enumerate(response.css("div[class='white'] table[class='standard_tabelle'] tr")):
+            season = response.css("select option[selected='selected'] ::text").getall()[0]
             if idx != 0:
                 print(post)
                 name = post.css("td ::text").getall()[0].strip()
@@ -28,6 +29,7 @@ class name_crawler(scrapy.Spider):
 
                 yield {
                     'name' : name,
+                    'season' : season,
                     'team' : team,
                     'DateOfBirth' : birth,
                     'height' : height,
