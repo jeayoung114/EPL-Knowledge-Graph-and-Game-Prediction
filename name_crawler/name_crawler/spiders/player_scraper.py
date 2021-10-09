@@ -22,15 +22,19 @@ class name_crawler(scrapy.Spider):
             if idx != 0:
                 print(post)
                 name = post.css("td ::text").getall()[0].strip()
+                player_url = 'https://www.worldfootball.net' + post.css("td a::attr(href)").getall()[0]
                 team = post.css("td ::text").getall()[3]
+                team_url = 'https://www.worldfootball.net' + post.css("td a::attr(href)").getall()[1]
                 birth = post.css("td ::text").getall()[4]
                 height = post.css("td ::text").getall()[5]
                 pos = post.css("td ::text").getall()[6]
 
                 yield {
                     'name' : name,
+                    'player_url' : player_url,
                     'season' : season,
                     'team' : team,
+                    'team_url' : team_url,
                     'DateOfBirth' : birth,
                     'height' : height,
                     'Position' : pos
