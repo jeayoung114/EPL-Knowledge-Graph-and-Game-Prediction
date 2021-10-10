@@ -3,7 +3,7 @@ DSCI558 Building Knowledge Graph Project
 
 ## 1. Crawler
 
-### WorldFootball.net
+### WorldFootball.net (https://www.worldfootball.net)
 game: `scrapy crawl game -o game_worldfootball.jl'<br />
 player_name: 'scrapy crawl player -o player_worldfootball.jl'<br />
 player_info: 'scrapy crawl player_info -o player_info_worldfootball.jl'<br />
