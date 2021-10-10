@@ -4,10 +4,10 @@ DSCI558 Building Knowledge Graph Project
 ## 1. Crawler
 
 ### WorldFootball.net
-game: `scrapy crawl game -o game_worldfootball.jl'\\
-player_name: 'scrapy crawl player -o player_worldfootball.jl'\\
-player_info: 'scrapy crawl player_info -o player_info_worldfootball.jl'\\
-team_info: 'scrapy crawl team_info -o team_info_worldfootball.jl'
+game: `scrapy crawl game -o game_worldfootball.jl'<br />
+player_name: 'scrapy crawl player -o player_worldfootball.jl'<br />
+player_info: 'scrapy crawl player_info -o player_info_worldfootball.jl'<br />
+team_info: 'scrapy crawl team_info -o team_info_worldfootball.jl'<br />
 
 ## 2. Contributor
   - 1. Jae Young Kim : [jkim2458@usc.edu]
