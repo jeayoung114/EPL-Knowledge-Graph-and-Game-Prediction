@@ -40,11 +40,21 @@ class name_crawler(scrapy.Spider):
             if len(tmp) == 0:
                 pass
             else:
-                key_val = [i for i in tmp if i != ""]
+                key_val = [i for i in tmp if i != "" and i != "[1]" and i != "[2]" and i != "[3]"]
                 if key_val[1:] != []:
                     res_dict[key_val[0]] = key_val[1:]
                     if key_val[1:] == ["Clubwebsite"]:
                         res_dict[key_val[0]] = post.css("::attr(href)").get()
+                    if key_val[0] == "Capacity":
+                        if len(key_val)==2:
+                            if "(" in key_val[1]:
+                                key_val[1] = key_val[1].split("(")[0]
+                        res_dict[key_val[0]] = key_val[1]
+                    if key_val[0] == "Chairman":
+                        res_dict[key_val[0]] = key_val[1]
+
+
+
 
 
             if idx == len(res)-1:
