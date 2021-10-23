@@ -15,14 +15,14 @@ class name_crawler(scrapy.Spider):
 
         df = pd.DataFrame()
         with fileinput.input(
-                files='/Users/jaeyoungkim/Desktop/usc/DSCI - 558/project/github/Untitled/worldfootball_crawler/player_worldfootball.jl') as file:
+                files='../worldfootball_crawler/player_worldfootball.jl') as file:
             for line in file:
                 conv = json.loads(line)
                 df = df.append(conv, ignore_index=True)
 
         teams_original = list(df["team"].drop_duplicates())
         teams = [re.sub(" ", "_", i) for i in teams_original]
-        self.start_urls = ["http://en.wikipedia.org/wiki/" + i for i in teams]
+        self.start_urls = ["http://en.wikipedia.org/wiki/" + i for i in teams] + ["https://en.wikipedia.org/wiki/Crystal_Palace_F.C."]
 
         self.handle_httpstatus_list = [404]
 

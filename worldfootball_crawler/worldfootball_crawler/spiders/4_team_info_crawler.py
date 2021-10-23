@@ -14,7 +14,7 @@ class name_crawler(scrapy.Spider):
 
         df = pd.DataFrame()
         with fileinput.input(
-                files='/Users/jaeyoungkim/Desktop/usc/DSCI - 558/project/github/Untitled/worldfootball_crawler/player_worldfootball.jl') as file:
+                files='./player_worldfootball.jl') as file:
             for line in file:
                 conv = json.loads(line)
                 df = df.append(conv, ignore_index=True)
