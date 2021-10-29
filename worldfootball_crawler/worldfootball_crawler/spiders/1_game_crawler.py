@@ -11,7 +11,7 @@ class name_crawler(scrapy.Spider):
         seasons = [str(i) + "-" + str(i+1) for i in range(2000, 2021)]
         rounds = [i for i in range(40)]
         # self.start_urls = [
-        #     "https://www.worldfootball.net/schedule/eng-premier-league-2000-2001-spieltag/1/"
+            #     "https://www.worldfootball.net/schedule/eng-premier-league-2000-2001-spieltag/1/"
         # ]
         self.start_urls = [
             "https://www.worldfootball.net/schedule/eng-premier-league-" + i + "-spieltag/" + str(j) for i in seasons for j in rounds
@@ -111,7 +111,7 @@ class name_crawler(scrapy.Spider):
                     player_number = ""
                     player_name = player_list[0]
                 player_url = "https://www.worldfootball.net" + player.css("td a ::attr(href)").getall()[0]
-                home_team_players.append({'player_number' : player_number, 'player_name' : player_name, 'player_url' : player_url})
+                away_team_players.append({'player_number' : player_number, 'player_name' : player_name, 'player_url' : player_url})
             except:
                 continue
         res_dict["away_team_players"] = away_team_players
