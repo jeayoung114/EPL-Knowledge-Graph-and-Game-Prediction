@@ -28,6 +28,27 @@ class name_crawler(scrapy.Spider):
     def parse(self, response):
         logging.info("response.status:%s" % response.status)
         res_dict = dict()
+
+        club_history = dict()
+        k = response.css("div[class='portfolio spec'] div[class='box']")[0]
+        k = k.css("div[class='data'] tr")
+        for idx, line in enumerate(k):
+            try:
+                l = line.css("tr ::text").getall()
+                period = l[1]
+                team = l[6]
+                position = l[11]
+
+                club_history[idx] = {"period" : period, "team" : team, "position" : position}
+            except:
+                continue
+
+        res_dict["team_history"] = club_history
+
+
+
+
+        res_dict["player_url"] = str(response).split("200 ")[1].split(">")[0]
         res = response.css("div[class='sidebar'] table[class='standard_tabelle yellow'] tr")
         name = response.css("div[class='sidebar'] div[class='box'] div[class='head'] h2[itemprop='name'] ::text").getall()[0].strip()
         res_dict["name"] = name
