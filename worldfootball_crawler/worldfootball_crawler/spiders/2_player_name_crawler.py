@@ -8,7 +8,7 @@ class name_crawler(scrapy.Spider):
     def __init__(self, date='', **kwargs):
         super().__init__(**kwargs)
         self.allowed_domain = ['http://www.worldfootball.net']
-        seasons = [str(i) + "-" + str(i+1) for i in range(2000, 2021)]
+        seasons = [str(i) + "-" + str(i+1) for i in range(2009, 2021)]
         self.start_urls = [
             "http://www.worldfootball.net/players_list/eng-premier-league-" + i + "/nach-name/" + str(j) for i in seasons for j in range(0,20)
         ]

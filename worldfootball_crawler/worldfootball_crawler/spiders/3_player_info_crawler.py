@@ -11,7 +11,7 @@ class name_crawler(scrapy.Spider):
     def __init__(self, date='', **kwargs):
         super().__init__(**kwargs)
         self.allowed_domain = ['http://www.worldfootball.net']
-        seasons = [str(i) + "-" + str(i+1) for i in range(2000, 2021)]
+        seasons = [str(i) + "-" + str(i+1) for i in range(2009, 2021)]
 
         df = pd.DataFrame()
         with fileinput.input(
@@ -35,11 +35,16 @@ class name_crawler(scrapy.Spider):
         for idx, line in enumerate(k):
             try:
                 l = line.css("tr ::text").getall()
+                l = [re.sub("\t", "", i) for i in l]
+                l = [re.sub("\n", "", i) for i in l]
+                team_url = 'https://www.worldfootball.net' + line.css("a ::attr(href)").get()
+
                 period = l[1]
                 team = l[6]
                 position = l[11]
 
-                club_history[idx] = {"period" : period, "team" : team, "position" : position}
+
+                club_history[idx] = {"period" : period, "team" : team, "position" : position, "team_url" : team_url}
             except:
                 continue
 
