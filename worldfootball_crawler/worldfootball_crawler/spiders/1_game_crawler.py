@@ -23,6 +23,7 @@ class name_crawler(scrapy.Spider):
         res_dict = dict()
         logging.info("response.status:%s" % response.status)
         tmp = response.css("div[class='box'] table[class='standard_tabelle']")[0]
+
         #for idx, post in enumerate(response.css("div[class='box'] table[class='standard_tabelle'] tr")):
         for idx, post in enumerate(tmp.css("tr")):
             selected = response.css("select option[selected='selected'] ::text").getall()
@@ -44,6 +45,7 @@ class name_crawler(scrapy.Spider):
                 score = line[9].split(" ")[0]
 
             request = scrapy.Request(url, callback=self.game_info_page, dont_filter=True)
+
             request.meta['season'] = season
             request.meta['round'] = round
             request.meta['date'] = date
@@ -64,7 +66,9 @@ class name_crawler(scrapy.Spider):
         res_dict["away_team"] = response.meta['away_team']
         res_dict["score"] = response.meta['score']
 
-
+        tmp = response.css("div[class='box'] table[class='standard_tabelle']")[0]
+        res_dict['home_team_url'] = "https://www.worldfootball.net" + tmp.css("tr ::attr(href)").getall()[0]
+        res_dict['away_team_url'] = "https://www.worldfootball.net" + tmp.css("tr ::attr(href)").getall()[1]
         tmp = response.css("table[class = 'standard_tabelle']")[1]
         goal_player = tmp.css("td ::text").getall()
         goal_player = [i for i in goal_player if "\t" not in i and i[0] not in "0123456789"][1:]

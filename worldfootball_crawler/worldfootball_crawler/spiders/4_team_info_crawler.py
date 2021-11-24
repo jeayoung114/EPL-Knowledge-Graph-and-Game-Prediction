@@ -30,6 +30,7 @@ class name_crawler(scrapy.Spider):
         res = response.css("div[class='sidebar'] table[class='standard_tabelle yellow'] tr")
         name = response.css("div[class='sidebar'] div[class='box emblemwrapper'] div[class='head'] h2 ::text").getall()[0].strip()
         res_dict["name"] = name
+        res_dict['world_team_url'] = response.request.url
 
         for idx, post in enumerate(response.css("div[class='sidebar'] table[class='standard_tabelle yellow'] tr")):
             # print(post)

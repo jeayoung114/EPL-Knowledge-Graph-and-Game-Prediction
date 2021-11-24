@@ -28,6 +28,7 @@ class name_crawler(scrapy.Spider):
     def parse(self, response):
         logging.info("response.status:%s" % response.status)
         res_dict = dict()
+        res_dict['wiki_team_url'] = response.request.url
         res = response.css("div[class='mw-parser-output'] table[class='infobox vcard'] tr")
         name = response.css("div[class='mw-parser-output'] table[class='infobox vcard'] caption[class='infobox-title fn org'] ::text").get().strip()
         res_dict["name"] = name

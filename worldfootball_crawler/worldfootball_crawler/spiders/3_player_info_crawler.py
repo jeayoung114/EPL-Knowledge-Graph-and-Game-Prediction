@@ -32,6 +32,20 @@ class name_crawler(scrapy.Spider):
         club_history = dict()
         k = response.css("div[class='portfolio spec'] div[class='box']")[0]
         k = k.css("div[class='data'] tr")
+        a = k[0].css("tr ::text").getall()
+        team_url = 'https://www.worldfootball.net' + k[0].css("a ::attr(href)").get()
+        if len(a) == 15:
+            a = [i.strip() for i in a]
+            a = [i for i in a if i != '']
+            current_team_dict = dict()
+            current_team_dict["team_name"] = a[0]
+            current_team_dict["country"] = a[1]
+            current_team_dict["position"] = a[2]
+            current_team_dict["period"] = a[3]
+            current_team_dict["shirt_Number"] = a[4]
+            current_team_dict["team_url"] = team_url
+            res_dict["Current_team_info"] = current_team_dict
+
         for idx, line in enumerate(k):
             try:
                 l = line.css("tr ::text").getall()
@@ -43,8 +57,8 @@ class name_crawler(scrapy.Spider):
                 team = l[6]
                 position = l[11]
 
-
-                club_history[idx] = {"period" : period, "team" : team, "position" : position, "team_url" : team_url}
+                if period != "":
+                    club_history[idx] = {"period" : period, "team" : team, "position" : position, "team_url" : team_url}
             except:
                 continue
 
