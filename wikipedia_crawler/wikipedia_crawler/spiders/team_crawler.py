@@ -11,7 +11,6 @@ class name_crawler(scrapy.Spider):
     def __init__(self, date='', **kwargs):
         super().__init__(**kwargs)
         self.allowed_domain = ['http://www.wikipedia.org/']
-        seasons = [str(i) + "-" + str(i+1) for i in range(2000, 2021)]
 
         df = pd.DataFrame()
         with fileinput.input(
