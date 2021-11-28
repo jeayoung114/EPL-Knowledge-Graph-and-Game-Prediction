@@ -36,6 +36,15 @@
                 </div>
             </v-layout>
         </v-col>
+        <v-col cols="12">
+          <div id="app">
+            <vuetable ref="vuetable"
+              api-url="http://localhost:5000/api/v0/team?team=tottenham%20hotspur"
+              :fields="['chairman', 'founded_at']"
+              :css="css.table"
+            ></vuetable>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </v-card>
@@ -43,13 +52,37 @@
 
 <script>
 import axios from "axios";
+import Vuetable from 'vuetable-2'
+import CssForBootstrap4 from '@/assets/VuetableCssBootstrap4.js'
+
 export default {
   name: "App",
+
+  components: {
+    Vuetable,
+  },
+
   data: () => ({
-    items: ['[Player]\'s match against [Team]', 'bar'],
-    values: ['[Player]\'s match against [Team]', 'bar'],
+    items: [
+        'Information of [Player]',
+        'Information of [Team]',
+        'List of teams in [Season]',
+        '[Player]\'s birthplace',
+        'Play style of [Player]',
+        '[Player]\'s match records against [Team]',
+        'Player who has strength in [Skill] in [Team]',
+    ],
+    values: [
+        'Information of [Player]',
+        'Information of [Team]',
+        'List of teams in [Season]',
+        '[Player]\'s birthplace',
+        'Play style of [Player]',
+        '[Player]\'s match records against [Team]',
+        'Player who has strength in [Skill] in [Team]',
+    ],
     value: null,
-    sentence: '[Player]\'s match against [Team]'
+    css: CssForBootstrap4,
   }),
 
   async beforeMount() {
@@ -95,5 +128,17 @@ export default {
     .centered-input >>> input {
       text-align: center;
       align-content: center;
+    }
+    #app {
+      font-family: "Avenir", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #2c3e50;
+      margin-top: 20px;
+    }
+    button.ui.button {
+      padding: 8px 3px 8px 10px;
+      margin-top: 1px;
+      margin-bottom: 1px;
     }
 </style>
