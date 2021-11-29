@@ -45,6 +45,7 @@
               :fields="fields"
               :api-url="api_url"
               :css="css.table"
+              :sort-order="fields"
             ></vuetable>
           </div>
         </v-col>
@@ -72,8 +73,9 @@ export default {
       {name: 'List of teams in [Season]', value: 'season'},
       {name: '[Player]\'s birthplace', value: 'birthplace'},
       {name: 'Play style of [Player]', value: 'style'},
-      {name: '[Player]\'s match records against [Team]', value: 'record'},
-      {name: 'Player who has strength in [Skill] in [Team]', value: 'skill'},
+      {name: '[Player]\'s match records against each team', value: 'record'},
+      {name: 'Players who has [Skill] strength in [Team]', value: 'skill'},
+      {name: 'Best players in [Team1] against [Team2]', value: 'best'},
     ],
     item: null,
     api_url: null,
@@ -104,6 +106,7 @@ export default {
           url += part.value.slice(1,-1).toLowerCase()
           url += "="
           url += part.guess.replace(" ", '%20')
+          url += "&"
         }
       })
 
