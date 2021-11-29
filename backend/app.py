@@ -69,7 +69,37 @@ def close_db(error):
         g.neo4j_db.close()
 
 
-class AthleteModel(Schema):
+class TeamModel(Schema):
+    type = 'object'
+    properties = {
+        'name': {
+            'type': 'string',
+        },
+        'founded_at' : {
+            'type': 'object',
+        },
+        'chairman': {
+            'type': 'string',
+        },
+        'owner': {
+            'type': 'string',
+        },
+        'website': {
+            'type': 'string',
+        },
+        'worldfootball_url': {
+            'type': 'string',
+        },
+        'whoscored_url': {
+            'type': 'string',
+        },
+        'wikipedia_url': {
+            'type': 'string',
+        },
+    }
+
+
+class PlayerModel(Schema):
     type = 'object'
     properties = {
         'label': {
@@ -110,6 +140,7 @@ class AthleteModel(Schema):
         }
     }
 
+
 def serialize_athlete(athlete):
     return {
         'label': athlete['label'],
@@ -127,6 +158,19 @@ def serialize_athlete(athlete):
     }
 
 
+def serialize_team(team):
+    return {
+        'name': team['ns0__name'],
+        'founded_at': team['ns0__FoundedAt'].isoformat(),
+        'chairman': team['ns0__Chairman'],
+        'owner': team['ns0__owner'],
+        'website': team['ns0__Website'],
+        'worldfootball_url': team['ns0__worldfootball_url'],
+        'whoscored_url': team['ns0__whoscored_url'],
+        'wikipedia_url': team['ns0__wikipedia_url'],
+    }
+
+
 class ApiDocs(Resource):
     def get(self, path=None):
         if not path:
@@ -134,27 +178,45 @@ class ApiDocs(Resource):
         return send_from_directory('swaggerui', path)
 
 
-class AthleteList(Resource):
+class TeamInformation(Resource):
     @swagger.doc({
-        'tags': ['athletes'],
-        'summary': 'Find all athletes',
-        'description': 'Returns all athletes',
+        'tags': ['team information'],
+        'summary': 'Team information',
+        'description': 'Returns information of team',
+        'parameters': [
+            {
+                'name': 'team',
+                'description': 'team name',
+                'in': 'query',
+                'type': 'string',
+                'required': True,
+            }
+        ],
         'responses': {
             '200': {
-                'description': 'A list of athletes',
-                'schema': AthleteModel,
+                'description': 'Team information',
+                'schema': TeamModel,
             }
         }
     })
     def get(self):
-        def get_athletes(tx):
-            return list(tx.run("match (n:ns0__athlete)-[r:ns0__nationality]-(a:ns0__Country{rdfs__label:'England'}) return n limit 5"))
+        team = request.args['team']
+
+        def get_team(tx, team):
+            return list(tx.run(
+                '''
+                MATCH (n:ns1__SportsTeam)
+                WHERE toLOWER(n.ns0__name) = toLower($team)
+                RETURN n
+                ''', {'team': team}
+            ))
+
         db = get_db()
-        result = db.write_transaction(get_athletes)
+        result = db.read_transaction(get_team, team)
         print(result)
-        return [serialize_athlete(record['athlete']) for record in result]
+        return {"data":[serialize_team(record['n']) for record in result]}
 
 
 api.add_resource(ApiDocs, '/docs', '/docs/<path:path>')
-api.add_resource(AthleteList, '/api/v0/athletes')
+api.add_resource(TeamInformation, '/api/v0/team')
 
