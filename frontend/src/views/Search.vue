@@ -6,14 +6,17 @@
       >
         <v-col cols="12">
           <v-autocomplete
-            v-model="value"
+            v-model="item"
             :items="items"
+            item-text="name"
+            item-value="value"
+            return-object
             dense
             filled
             label="Search"
           ></v-autocomplete>
         </v-col>
-        <v-col cols="12" v-if="value !== null">
+        <v-col cols="12" v-if="item !== null">
             <v-layout row align-center justify-center>
                 <span v-for="(part, index) in sentenceParts" :key="index">
                   <label>
@@ -30,17 +33,17 @@
                 </span>
                 <span>&nbsp;&nbsp;</span>
                 <div class="text-xs-center">
-                  <v-btn primary>
+                  <v-btn primary @click="search">
                     Search
                   </v-btn>
                 </div>
             </v-layout>
         </v-col>
-        <v-col cols="12">
+        <v-col cols="12"  v-if="fields !== null">
           <div id="app">
             <vuetable ref="vuetable"
-              api-url="http://localhost:5000/api/v0/team?team=tottenham%20hotspur"
-              :fields="['chairman', 'founded_at']"
+              :fields="fields"
+              :api-url="api_url"
               :css="css.table"
             ></vuetable>
           </div>
@@ -51,9 +54,9 @@
 </template>
 
 <script>
-import axios from "axios";
 import Vuetable from 'vuetable-2'
 import CssForBootstrap4 from '@/assets/VuetableCssBootstrap4.js'
+import axios from "axios";
 
 export default {
   name: "App",
@@ -64,44 +67,25 @@ export default {
 
   data: () => ({
     items: [
-        'Information of [Player]',
-        'Information of [Team]',
-        'List of teams in [Season]',
-        '[Player]\'s birthplace',
-        'Play style of [Player]',
-        '[Player]\'s match records against [Team]',
-        'Player who has strength in [Skill] in [Team]',
+      {name: 'Information of [Player]', value: 'player'},
+      {name: 'Information of [Team]', value: 'team'},
+      {name: 'List of teams in [Season]', value: 'season'},
+      {name: '[Player]\'s birthplace', value: 'birthplace'},
+      {name: 'Play style of [Player]', value: 'style'},
+      {name: '[Player]\'s match records against [Team]', value: 'record'},
+      {name: 'Player who has strength in [Skill] in [Team]', value: 'skill'},
     ],
-    values: [
-        'Information of [Player]',
-        'Information of [Team]',
-        'List of teams in [Season]',
-        '[Player]\'s birthplace',
-        'Play style of [Player]',
-        '[Player]\'s match records against [Team]',
-        'Player who has strength in [Skill] in [Team]',
-    ],
-    value: null,
+    item: null,
+    api_url: null,
+    fields: null,
     css: CssForBootstrap4,
   }),
-
-  async beforeMount() {
-    const { data } = await axios.post(
-      "https://jsonplaceholder.typicode.com/posts",
-      {
-        title: "foo",
-        body: "bar",
-        userId: 1
-      }
-    );
-    console.log(data);
-  },
 
   methods: {
     reset () {
       const re = /(\[[^\]]*\])/
       // The filter removes empty strings
-      const parts = this.value.split(re).filter(text => text)
+      const parts = this.item.name.split(re).filter(text => text)
 
       this.sentenceParts = parts.map(segment => {
         const isInput = re.test(segment)
@@ -112,11 +96,32 @@ export default {
           value: segment
         }
       })
+    },
+    async search () {
+      let url = "http://localhost:5000/api/v0/" + this.item.value + "?"
+      this.sentenceParts.map(part => {
+        if (part.input) {
+          url += part.value.slice(1,-1).toLowerCase()
+          url += "="
+          url += part.guess.replace(" ", '%20')
+        }
+      })
+
+      const fetchedResult = [];
+      await axios.get(url).then(
+          response => {
+            for (let key in response.data.data['0']) {
+              fetchedResult.push(key)
+            }
+            this.fields = fetchedResult
+            this.api_url = url
+          }
+      );
     }
   },
 
   watch: {
-    value: {
+    item: {
       immediate: true,
       handler: 'reset'
     }
@@ -142,3 +147,4 @@ export default {
       margin-bottom: 1px;
     }
 </style>
+
