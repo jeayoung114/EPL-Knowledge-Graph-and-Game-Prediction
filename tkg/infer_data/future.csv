@@ -1,114 +1,260 @@
-timestamp,home_team,away_team,score
-469,Liverpool FC,Aston Villa,lose
-469,Chelsea FC,Leeds United,win
-469,Leicester City,Newcastle United,win
-469,Crystal Palace,Everton FC,draw
-469,Brentford FC,Watford FC,win
-469,Brighton & Hove Albion,Tottenham Hotspur,lose
-469,Arsenal FC,Southampton FC,draw
-469,Manchester City,Wolverhampton Wanderers,lose
-469,Burnley FC,West Ham United,draw
-469,Norwich City,Manchester United,lose
-470,Manchester City,Leeds United,win
-470,Brentford FC,Manchester United,lose
-470,Norwich City,Aston Villa,win
-470,Brighton & Hove Albion,Wolverhampton Wanderers,win
-470,Burnley FC,Watford FC,win
-470,Arsenal FC,West Ham United,win
-470,Leicester City,Tottenham Hotspur,lose
-470,Liverpool FC,Newcastle United,win
-470,Chelsea FC,Everton FC,draw
-470,Crystal Palace,Southampton FC,win
-471,Aston Villa,Burnley FC,win
-471,Southampton FC,Brentford FC,win
-471,Watford FC,Crystal Palace,win
-471,West Ham United,Norwich City,draw
-471,Everton FC,Leicester City,lose
-471,Manchester United,Brighton & Hove Albion,win
-471,Wolverhampton Wanderers,Chelsea FC,lose
-471,Newcastle United,Manchester City,lose
-471,Tottenham Hotspur,Liverpool FC,lose
-471,Leeds United,Arsenal FC,lose
-472,Newcastle United,Manchester United,lose
-472,Wolverhampton Wanderers,Watford FC,lose
-472,Aston Villa,Chelsea FC,lose
-472,Brighton & Hove Albion,Brentford FC,win
-472,West Ham United,Southampton FC,win
-472,Tottenham Hotspur,Crystal Palace,win
-472,Norwich City,Arsenal FC,draw
-472,Manchester City,Leicester City,lose
-472,Burnley FC,Everton FC,win
-472,Liverpool FC,Leeds United,lose
-473,Manchester United,Burnley FC,lose
-473,Everton FC,Newcastle United,win
-473,Chelsea FC,Brighton & Hove Albion,win
-473,Leicester City,Liverpool FC,lose
-473,Brentford FC,Manchester City,lose
-473,Arsenal FC,Wolverhampton Wanderers,draw
-473,Leeds United,Aston Villa,win
-473,Watford FC,West Ham United,win
-473,Southampton FC,Tottenham Hotspur,lose
-473,Crystal Palace,Norwich City,win
-474,Arsenal FC,Manchester City,lose
-474,Manchester United,Wolverhampton Wanderers,draw
-474,Chelsea FC,Liverpool FC,lose
-474,Leeds United,Burnley FC,win
-474,Southampton FC,Newcastle United,win
-474,Everton FC,Brighton & Hove Albion,win
-474,Brentford FC,Aston Villa,win
-474,Leicester City,Norwich City,draw
-474,Crystal Palace,West Ham United,draw
-474,Watford FC,Tottenham Hotspur,draw
-475,Tottenham Hotspur,Arsenal FC,draw
-475,Liverpool FC,Brentford FC,win
-475,Manchester City,Chelsea FC,lose
-475,Norwich City,Everton FC,draw
-475,Burnley FC,Leicester City,win
-475,Wolverhampton Wanderers,Southampton FC,draw
-475,Newcastle United,Watford FC,win
-475,Aston Villa,Manchester United,lose
-475,Brighton & Hove Albion,Crystal Palace,win
-475,West Ham United,Leeds United,win
-476,Chelsea FC,Tottenham Hotspur,draw
-476,Crystal Palace,Liverpool FC,lose
-476,Manchester United,West Ham United,win
-476,Southampton FC,Manchester City,lose
-476,Leicester City,Brighton & Hove Albion,draw
-476,Arsenal FC,Burnley FC,win
-476,Brentford FC,Wolverhampton Wanderers,lose
-476,Everton FC,Aston Villa,win
-476,Watford FC,Norwich City,win
-476,Leeds United,Newcastle United,win
-477,Brighton & Hove Albion,Chelsea FC,lose
-477,Norwich City,Crystal Palace,draw
-477,Wolverhampton Wanderers,Arsenal FC,win
-477,Aston Villa,Leeds United,win
-477,Burnley FC,Manchester United,lose
-477,Liverpool FC,Leicester City,win
-477,West Ham United,Watford FC,win
-477,Manchester City,Brentford FC,win
-477,Newcastle United,Everton FC,win
-477,Tottenham Hotspur,Southampton FC,lose
-478,Brentford FC,Crystal Palace,win
-479,Arsenal FC,Brentford FC,win
-480,Brighton & Hove Albion,Aston Villa,draw
-481,Newcastle United,Brighton & Hove Albion,draw
-482,Brighton & Hove Albion,Liverpool FC,lose
-483,Aston Villa,Arsenal FC,win
-484,Brighton & Hove Albion,Norwich City,win
-485,Arsenal FC,Brighton & Hove Albion,draw
-486,Aston Villa,Liverpool FC,lose
-487,Leicester City,Aston Villa,win
-488,Aston Villa,Norwich City,win
-489,Burnley FC,Aston Villa,draw
-490,Aston Villa,Crystal Palace,win
-491,Chelsea FC,Watford FC,win
-491,Crystal Palace,Manchester United,lose
-491,Norwich City,Tottenham Hotspur,lose
-491,Manchester City,Aston Villa,win
-491,Brighton & Hove Albion,West Ham United,win
-491,Burnley FC,Newcastle United,win
-491,Liverpool FC,Wolverhampton Wanderers,lose
-491,Leicester City,Southampton FC,draw
-491,Arsenal FC,Everton FC,draw
-491,Brentford FC,Leeds United,win
+469,Aston Villa,Manchester City,lose
+469,Manchester United,Arsenal FC,draw
+469,Southampton FC,Leicester City,lose
+469,Tottenham Hotspur,Brentford FC,win
+469,Wolverhampton Wanderers,Burnley FC,draw
+469,Everton FC,Liverpool FC,lose
+469,Newcastle United,Norwich City,win
+469,West Ham United,Brighton & Hove Albion,draw
+469,Watford FC,Chelsea FC,lose
+469,Leeds United,Crystal Palace,lose
+470,Leeds United,Brentford FC,win
+470,West Ham United,Chelsea FC,lose
+470,Aston Villa,Leicester City,lose
+470,Everton FC,Arsenal FC,draw
+470,Watford FC,Manchester City,lose
+470,Wolverhampton Wanderers,Liverpool FC,lose
+470,Newcastle United,Burnley FC,win
+470,Southampton FC,Brighton & Hove Albion,draw
+470,Manchester United,Crystal Palace,win
+470,Tottenham Hotspur,Norwich City,lose
+471,Arsenal FC,Southampton FC,draw
+471,Chelsea FC,Leeds United,win
+471,Burnley FC,West Ham United,draw
+471,Manchester City,Wolverhampton Wanderers,lose
+471,Liverpool FC,Aston Villa,lose
+471,Norwich City,Manchester United,lose
+471,Brentford FC,Watford FC,win
+471,Brighton & Hove Albion,Tottenham Hotspur,lose
+471,Crystal Palace,Everton FC,draw
+471,Leicester City,Newcastle United,win
+472,Brentford FC,Manchester United,lose
+472,Burnley FC,Watford FC,win
+472,Brighton & Hove Albion,Wolverhampton Wanderers,win
+472,Liverpool FC,Newcastle United,win
+472,Arsenal FC,West Ham United,win
+472,Manchester City,Leeds United,win
+472,Crystal Palace,Southampton FC,win
+472,Leicester City,Tottenham Hotspur,lose
+472,Chelsea FC,Everton FC,draw
+472,Norwich City,Aston Villa,win
+473,Tottenham Hotspur,Liverpool FC,lose
+473,Leeds United,Arsenal FC,lose
+473,West Ham United,Norwich City,draw
+473,Everton FC,Leicester City,lose
+473,Wolverhampton Wanderers,Chelsea FC,lose
+473,Watford FC,Crystal Palace,win
+473,Newcastle United,Manchester City,lose
+473,Aston Villa,Burnley FC,lose
+473,Manchester United,Brighton & Hove Albion,win
+473,Southampton FC,Brentford FC,win
+474,Liverpool FC,Leeds United,lose
+474,Aston Villa,Chelsea FC,lose
+474,West Ham United,Southampton FC,win
+474,Wolverhampton Wanderers,Watford FC,win
+474,Burnley FC,Everton FC,win
+474,Manchester City,Leicester City,win
+474,Tottenham Hotspur,Crystal Palace,win
+474,Norwich City,Arsenal FC,draw
+474,Newcastle United,Manchester United,lose
+474,Brighton & Hove Albion,Brentford FC,win
+475,Southampton FC,Tottenham Hotspur,lose
+475,Leicester City,Liverpool FC,lose
+475,Leeds United,Aston Villa,win
+475,Chelsea FC,Brighton & Hove Albion,win
+475,Brentford FC,Manchester City,lose
+475,Everton FC,Newcastle United,win
+475,Crystal Palace,Norwich City,win
+475,Watford FC,West Ham United,win
+475,Manchester United,Burnley FC,lose
+475,Arsenal FC,Wolverhampton Wanderers,draw
+476,Manchester United,Wolverhampton Wanderers,draw
+476,Chelsea FC,Liverpool FC,lose
+476,Leeds United,Burnley FC,win
+476,Southampton FC,Newcastle United,win
+476,Everton FC,Brighton & Hove Albion,win
+476,Brentford FC,Aston Villa,win
+476,Crystal Palace,West Ham United,win
+476,Leicester City,Norwich City,win
+476,Watford FC,Tottenham Hotspur,lose
+476,Arsenal FC,Manchester City,lose
+477,Tottenham Hotspur,Arsenal FC,lose
+477,West Ham United,Leeds United,win
+477,Aston Villa,Manchester United,lose
+477,Manchester City,Chelsea FC,lose
+477,Burnley FC,Leicester City,win
+477,Brighton & Hove Albion,Crystal Palace,win
+477,Liverpool FC,Brentford FC,win
+477,Norwich City,Everton FC,draw
+477,Newcastle United,Watford FC,win
+477,Wolverhampton Wanderers,Southampton FC,draw
+478,Southampton FC,Manchester City,lose
+478,Crystal Palace,Liverpool FC,lose
+478,Watford FC,Norwich City,win
+478,Chelsea FC,Tottenham Hotspur,draw
+478,Leeds United,Newcastle United,win
+478,Brentford FC,Wolverhampton Wanderers,lose
+478,Arsenal FC,Burnley FC,win
+478,Everton FC,Aston Villa,win
+478,Leicester City,Brighton & Hove Albion,draw
+478,Manchester United,West Ham United,win
+479,Wolverhampton Wanderers,Arsenal FC,lose
+479,West Ham United,Watford FC,win
+479,Burnley FC,Manchester United,lose
+479,Newcastle United,Everton FC,win
+479,Manchester City,Brentford FC,win
+479,Liverpool FC,Leicester City,win
+479,Aston Villa,Leeds United,win
+479,Tottenham Hotspur,Southampton FC,lose
+479,Norwich City,Crystal Palace,win
+479,Brighton & Hove Albion,Chelsea FC,lose
+480,Brentford FC,Crystal Palace,win
+480,Norwich City,Manchester City,lose
+480,Newcastle United,Aston Villa,win
+480,Manchester United,Southampton FC,lose
+480,Leicester City,West Ham United,win
+480,Watford FC,Brighton & Hove Albion,win
+480,Tottenham Hotspur,Wolverhampton Wanderers,lose
+480,Everton FC,Leeds United,win
+480,Chelsea FC,Arsenal FC,draw
+480,Burnley FC,Liverpool FC,lose
+481,Aston Villa,Watford FC,win
+481,Arsenal FC,Brentford FC,win
+481,West Ham United,Newcastle United,win
+481,Leeds United,Manchester United,lose
+481,Wolverhampton Wanderers,Leicester City,lose
+481,Manchester City,Tottenham Hotspur,draw
+481,Liverpool FC,Norwich City,draw
+481,Brighton & Hove Albion,Burnley FC,draw
+481,Crystal Palace,Chelsea FC,lose
+481,Southampton FC,Everton FC,draw
+482,Manchester United,Watford FC,win
+482,West Ham United,Wolverhampton Wanderers,lose
+482,Brentford FC,Newcastle United,win
+482,Everton FC,Manchester City,lose
+482,Crystal Palace,Burnley FC,draw
+482,Chelsea FC,Leicester City,lose
+482,Southampton FC,Norwich City,win
+482,Brighton & Hove Albion,Aston Villa,draw
+482,Leeds United,Tottenham Hotspur,draw
+482,Arsenal FC,Liverpool FC,lose
+483,Watford FC,Arsenal FC,lose
+483,Wolverhampton Wanderers,Crystal Palace,lose
+483,Aston Villa,Southampton FC,draw
+483,Leicester City,Leeds United,lose
+483,Norwich City,Brentford FC,win
+483,Burnley FC,Chelsea FC,lose
+483,Tottenham Hotspur,Everton FC,draw
+483,Manchester City,Manchester United,lose
+483,Liverpool FC,West Ham United,win
+483,Newcastle United,Brighton & Hove Albion,draw
+484,Brentford FC,Burnley FC,win
+484,Chelsea FC,Newcastle United,win
+484,Arsenal FC,Leicester City,win
+484,Crystal Palace,Manchester City,lose
+484,Manchester United,Tottenham Hotspur,lose
+484,Southampton FC,Watford FC,win
+484,Brighton & Hove Albion,Liverpool FC,lose
+484,West Ham United,Aston Villa,draw
+484,Leeds United,Norwich City,win
+484,Everton FC,Wolverhampton Wanderers,lose
+485,Wolverhampton Wanderers,Leeds United,win
+485,Watford FC,Everton FC,draw
+485,Burnley FC,Southampton FC,draw
+485,Tottenham Hotspur,West Ham United,win
+485,Liverpool FC,Manchester United,lose
+485,Norwich City,Chelsea FC,lose
+485,Manchester City,Brighton & Hove Albion,win
+485,Leicester City,Brentford FC,win
+485,Aston Villa,Arsenal FC,lose
+485,Newcastle United,Crystal Palace,win
+486,Brighton & Hove Albion,Norwich City,win
+486,Crystal Palace,Arsenal FC,draw
+486,Burnley FC,Manchester City,lose
+486,Chelsea FC,Brentford FC,win
+486,Manchester United,Leicester City,win
+486,Leeds United,Southampton FC,lose
+486,Tottenham Hotspur,Newcastle United,win
+486,Liverpool FC,Watford FC,win
+486,Wolverhampton Wanderers,Aston Villa,win
+486,West Ham United,Everton FC,draw
+487,Southampton FC,Chelsea FC,lose
+487,Manchester City,Liverpool FC,lose
+487,Watford FC,Leeds United,lose
+487,Everton FC,Manchester United,lose
+487,Aston Villa,Tottenham Hotspur,draw
+487,Leicester City,Crystal Palace,win
+487,Newcastle United,Wolverhampton Wanderers,lose
+487,Norwich City,Burnley FC,lose
+487,Brentford FC,West Ham United,draw
+487,Arsenal FC,Brighton & Hove Albion,draw
+488,West Ham United,Burnley FC,win
+488,Leeds United,Chelsea FC,lose
+488,Watford FC,Brentford FC,win
+488,Southampton FC,Arsenal FC,lose
+488,Manchester United,Norwich City,lose
+488,Everton FC,Crystal Palace,draw
+488,Tottenham Hotspur,Brighton & Hove Albion,win
+488,Wolverhampton Wanderers,Manchester City,lose
+488,Aston Villa,Liverpool FC,lose
+488,Newcastle United,Leicester City,win
+489,Brighton & Hove Albion,Southampton FC,draw
+489,Crystal Palace,Leeds United,win
+489,Brentford FC,Tottenham Hotspur,draw
+489,Manchester City,Watford FC,win
+489,Arsenal FC,Manchester United,lose
+489,Norwich City,Newcastle United,win
+489,Burnley FC,Wolverhampton Wanderers,lose
+489,Chelsea FC,West Ham United,win
+489,Leicester City,Aston Villa,win
+489,Liverpool FC,Everton FC,draw
+490,Tottenham Hotspur,Leicester City,lose
+490,Newcastle United,Liverpool FC,lose
+490,Manchester United,Brentford FC,win
+490,Wolverhampton Wanderers,Brighton & Hove Albion,draw
+490,Leeds United,Manchester City,lose
+490,West Ham United,Arsenal FC,lose
+490,Everton FC,Chelsea FC,lose
+490,Southampton FC,Crystal Palace,draw
+490,Aston Villa,Norwich City,win
+490,Watford FC,Burnley FC,win
+491,Leicester City,Everton FC,draw
+491,Manchester City,Newcastle United,win
+491,Brentford FC,Southampton FC,draw
+491,Burnley FC,Aston Villa,draw
+491,Arsenal FC,Leeds United,win
+491,Liverpool FC,Tottenham Hotspur,lose
+491,Norwich City,West Ham United,win
+491,Chelsea FC,Wolverhampton Wanderers,draw
+491,Crystal Palace,Watford FC,win
+491,Brighton & Hove Albion,Manchester United,lose
+492,Leeds United,Brighton & Hove Albion,lose
+492,Manchester United,Chelsea FC,lose
+492,Newcastle United,Arsenal FC,draw
+492,Tottenham Hotspur,Burnley FC,win
+492,Southampton FC,Liverpool FC,lose
+492,Everton FC,Brentford FC,win
+492,Watford FC,Leicester City,win
+492,Wolverhampton Wanderers,Norwich City,win
+492,West Ham United,Manchester City,lose
+492,Aston Villa,Crystal Palace,win
+493,Arsenal FC,Everton FC,draw
+493,Norwich City,Tottenham Hotspur,lose
+493,Manchester City,Aston Villa,win
+493,Liverpool FC,Wolverhampton Wanderers,lose
+493,Brentford FC,Leeds United,win
+493,Brighton & Hove Albion,West Ham United,win
+493,Burnley FC,Newcastle United,win
+493,Chelsea FC,Watford FC,win
+493,Brentford FC,Leeds United,win
+493,Arsenal FC,Everton FC,draw
+493,Leicester City,Southampton FC,draw
+493,Leicester City,Southampton FC,draw
+493,Crystal Palace,Manchester United,lose
+493,Chelsea FC,Watford FC,win
+493,Burnley FC,Newcastle United,win
+493,Norwich City,Tottenham Hotspur,lose
+493,Manchester City,Aston Villa,win
+493,Liverpool FC,Wolverhampton Wanderers,lose
+493,Brighton & Hove Albion,West Ham United,win
+493,Crystal Palace,Manchester United,lose
