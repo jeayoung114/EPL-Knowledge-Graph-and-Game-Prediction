@@ -1,11 +1,29 @@
 <template>
   <div class="predict">
-    <h1>predict</h1>
+    <timeline ref="timeline" :items="items" :groups="groups" :options="options"> </timeline>
   </div>
 </template>
 
 <script>
-export default {
+import { Timeline } from 'vue-visjs'
+import items from '../../tkg/items.json'
+import groups from '../../tkg/groups.json'
 
+export default {
+  name: "App",
+
+  components: {
+    Timeline,
+  },
+
+  data() {
+    return {
+      groups: groups,
+      items: items,
+      // options: {
+      //   editable: true
+      // }
+    }
+  }
 }
 </script>

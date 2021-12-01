@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "glob-parent": "^6.0.2",
     "vue-router": "^3.5.3",
+    "vue-visjs": "^0.6.0",
     "vuetable-2": "^2.0.0-beta.4",
     "vuetify": "^2.4.0"
   },
