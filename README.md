@@ -37,7 +37,10 @@ FLASK_URL="http://localhost:5000"
 ```
 
 ## 4. Frontend
-
+```
+npm install
+npm run serve
+```
 
 ## 5. Contributor
   - 1. Jae Young Kim : [jkim2458@usc.edu]
