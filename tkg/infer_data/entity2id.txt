@@ -1,0 +1,39 @@
+Wolverhampton Wanderers	0
+West Ham United	1
+Bolton Wanderers	2
+Sunderland AFC	3
+Portsmouth FC	4
+Fulham FC	5
+Stoke City	6
+Burnley FC	7
+Everton FC	8
+Arsenal FC	9
+Manchester United	10
+Birmingham City	11
+Tottenham Hotspur	12
+Liverpool FC	13
+Aston Villa	14
+Wigan Athletic	15
+Blackburn Rovers	16
+Manchester City	17
+Chelsea FC	18
+Hull City	19
+Newcastle United	20
+West Bromwich Albion	21
+Blackpool FC	22
+Swansea City	23
+Queens Park Rangers	24
+Norwich City	25
+Southampton FC	26
+Reading FC	27
+Crystal Palace	28
+Cardiff City	29
+Leicester City	30
+AFC Bournemouth	31
+Watford FC	32
+Middlesbrough FC	33
+Huddersfield Town	34
+Brighton & Hove Albion	35
+Sheffield United	36
+Leeds United	37
+Brentford FC	38
