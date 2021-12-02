@@ -23,15 +23,15 @@ scrapy crawl team_info team_info_wikipedia.jl
 ## 2. Entity Resolution
 
 cd ../Entity Resolution<br />
-run 1. Player Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/1.%20Player%20Entity%20Resolution.ipynb]<br />
-run 2. Player PSL.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/2.%20Player%20PSL.ipynb]<br />
-run 3. Team Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/3.%20Team%20Entity%20Resolution.ipynb]<br />
-run 4. Game Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/4.%20Game%20Entity%20Resolution.ipynb]<br />
+run 1. [Player Entity Resolution.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/1.%20Player%20Entity%20Resolution.ipynb)<br />
+run 2. [Player PSL.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/2.%20Player%20PSL.ipynb)<br />
+run 3. [Team Entity Resolution.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/3.%20Team%20Entity%20Resolution.ipynb)<br />
+run 4. [Game Entity Resolution.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/4.%20Game%20Entity%20Resolution.ipynb)<br />
 
 ## 3. KG Construction
 
 cd ../KG Construction<br />
-run 5. KG Construction.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/KG%20Construction/5.%20KG%20Construction.ipynb]
+run 5. [KG Construction.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/KG%20Construction/5.%20KG%20Construction.ipynb)
 
 
 ## 4. Neo4j
