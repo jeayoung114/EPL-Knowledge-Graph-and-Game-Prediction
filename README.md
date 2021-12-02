@@ -12,26 +12,26 @@ player_info: 'scrapy crawl player_info -o player_info_worldfootball.jl'<br />
 team_info: 'scrapy crawl team_info -o team_info_worldfootball.jl'<br />
 
 ### Whoscored.com
-cd ../whoscored_crawler
+cd ../whoscored_crawler<br />
 run whoscored_Crawler.ipynb
 
 ### Wikipedia
-cd ../wikipedia_crawler
+cd ../wikipedia_crawler<br />
 scrapy crawl team_info team_info_wikipedia.jl
 
 
 ## 2. Entity Resolution
 
-cd ../Entity Resolution
-run 1. Player Entity Resolution.ipynb
-run 2. Player PSL.ipynb
-run 3. Team Entity Resolution.ipynb
-run 4. Game Entity Resolution.ipynb
+cd ../Entity Resolution<br />
+run 1. Player Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/1.%20Player%20Entity%20Resolution.ipynb]<br />
+run 2. Player PSL.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/2.%20Player%20PSL.ipynb]<br />
+run 3. Team Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/3.%20Team%20Entity%20Resolution.ipynb]<br />
+run 4. Game Entity Resolution.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/Entity%20Resolution/4.%20Game%20Entity%20Resolution.ipynb]<br />
 
 ## 3. KG Construction
 
-cd ../KG Construction
-run 5. KG Construction.ipynb
+cd ../KG Construction<br />
+run 5. KG Construction.ipynb[https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/KG%20Construction/5.%20KG%20Construction.ipynb]
 
 
 ## 4. Neo4j
