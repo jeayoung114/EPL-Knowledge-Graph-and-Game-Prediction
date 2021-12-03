@@ -1,10 +1,10 @@
-<template>
+<template >
   <v-card>
     <v-container fluid>
       <v-row
         align="center"
       >
-        <v-col cols="12">
+        <v-col cols="12" >
           <v-autocomplete
             v-model="item"
             :items="items"
