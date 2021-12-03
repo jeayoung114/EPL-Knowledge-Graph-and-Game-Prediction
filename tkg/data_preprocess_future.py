@@ -54,12 +54,12 @@ train_events.sort(key = lambda x: int(x[3]))
 infer_events.sort(key = lambda x: int(x[3]))
 
 
-with open('infer_data/entity2id.txt', 'w') as file:
+with open('CyGNet/data/infer_data/entity2id.txt', 'w') as file:
     for key in entity_to_idx:
         file.write(key + '\t' + str(entity_to_idx[key]))
         file.write('\n')
 
-with open('infer_data/relation2id.txt', 'w') as file:
+with open('CyGNet/data/infer_data/relation2id.txt', 'w') as file:
     for key in relation_to_idx:
         file.write(key + '\t' + str(relation_to_idx[key]))
         file.write('\n')
@@ -67,17 +67,17 @@ with open('infer_data/relation2id.txt', 'w') as file:
 train = train_events[:int(len(train_events)*0.9)]
 dev = train_events[int(len(train_events)*0.9):]
 
-with open('infer_data/train.txt', 'w') as file:
+with open('CyGNet/data/infer_data/train.txt', 'w') as file:
     for instance in train:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')
 
-with open('infer_data/valid.txt', 'w') as file:
+with open('CyGNet/data/infer_data/valid.txt', 'w') as file:
     for instance in dev:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')
 
-with open('infer_data/test.txt', 'w') as file:
+with open('CyGNet/data/infer_data/test.txt', 'w') as file:
     for instance in infer_events:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')

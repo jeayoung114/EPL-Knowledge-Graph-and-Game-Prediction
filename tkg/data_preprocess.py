@@ -38,12 +38,12 @@ all_events.sort(key = lambda x: int(x[3]))
 
 print(all_events)
 
-with open('data/entity2id.txt', 'w') as file:
+with open('CyGNet/data/train_data/entity2id.txt', 'w') as file:
     for key in entity_to_idx:
         file.write(key + '\t' + str(entity_to_idx[key]))
         file.write('\n')
 
-with open('data/relation2id.txt', 'w') as file:
+with open('CyGNet/data/train_data/relation2id.txt', 'w') as file:
     for key in relation_to_idx:
         file.write(key + '\t' + str(relation_to_idx[key]))
         file.write('\n')
@@ -58,17 +58,17 @@ test = all_events[int(len(all_events)*0.9):]
 print(len(test))
 print(test[0])
 
-with open('data/train.txt', 'w') as file:
+with open('CyGNet/data/train_data/train.txt', 'w') as file:
     for instance in train:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')
 
-with open('data/valid.txt', 'w') as file:
+with open('CyGNet/data/train_data/valid.txt', 'w') as file:
     for instance in dev:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')
 
-with open('data/test.txt', 'w') as file:
+with open('CyGNet/data/train_data/test.txt', 'w') as file:
     for instance in test:
         file.write(str(entity_to_idx[instance[0]]) + '\t' + str(relation_to_idx[instance[1]]) + '\t' + str(entity_to_idx[instance[2]]) + '\t' + str(instance[3]) + '\t' + '0')
         file.write('\n')
