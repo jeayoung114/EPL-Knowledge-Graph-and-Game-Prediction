@@ -5,7 +5,7 @@ DSCI558 Building Knowledge Graph Project
 
 ### WorldFootball.net (https://www.worldfootball.net)
 
-cd KG_generation/worldfootball_crawler
+cd KG_generation/worldfootball_crawler<br />
 game: `scrapy crawl game -o game_worldfootball.jl'<br />
 player_name: 'scrapy crawl player -o player_worldfootball.jl'<br />
 player_info: 'scrapy crawl player_info -o player_info_worldfootball.jl'<br />
@@ -13,7 +13,7 @@ team_info: 'scrapy crawl team_info -o team_info_worldfootball.jl'<br />
 
 ### Whoscored.com
 cd ../whoscored_crawler<br />
-run whoscored_Crawler.ipynb
+run [whoscored_Crawler.ipynb](https://github.com/jeayoung114/EPL-Knowledge-Graph-and-Game-Prediction/blob/main/KG_generation/whoscored_crawler/whoscored_Crawler.ipynb)
 
 ### Wikipedia
 cd ../wikipedia_crawler<br />
